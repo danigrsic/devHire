@@ -1,0 +1,14 @@
+{
+  "name": "devhire/job-portal",
+  "description": "IT Job Marketplace - devHire",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "phpmailer/phpmailer": "^6.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "DevHire\\": "app/"
+    }
+  }
+}

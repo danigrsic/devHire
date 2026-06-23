@@ -1,0 +1,19 @@
+# Composer
+/vendor/
+composer.lock
+
+# Secrets – NEVER commit these
+/db_config.php
+/mail_config.php
+
+# User uploads
+/assets/uploads/*
+!/assets/uploads/.gitkeep
+
+# Logs / OS / IDE
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
