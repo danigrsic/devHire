@@ -68,7 +68,7 @@ class UserManager
 
         // Send activation email
         $mailer = new Mailer();
-        $verifyLink = $this->getBaseUrl() . 'public/verify.php?token=' . $activationToken;
+        $verifyLink = $this->getBaseUrl() . '/verify.php?token=' . $activationToken;
         $mailSent = $mailer->sendActivationEmail($email, $firstName, $verifyLink);
 
         return [

@@ -25,8 +25,8 @@ class Mailer
                 'encryption' => 'tls',
                 'from_email' => 'noreply@devhire.local',
                 'from_name' => 'devHire',
-                'app_url' => 'http://localhost/devhire/',
-                'notify_on_message' => false,
+                'app_url' => 'http://localhost/',
+                
             ];
         }
     }

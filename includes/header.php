@@ -8,12 +8,12 @@ $userType = $_SESSION['user_type'] ?? null;
 $scriptDir = str_replace('\\','/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
 $base = '';
 if (strpos($scriptDir, '/devhire') !== false) {
-    $base = substr($scriptDir, 0, strpos($scriptDir, '/devhire') + strlen('/devhire'));
+    $base = substr($scriptDir, 0, strpos($scriptDir, '') + strlen('/devhire'));
 }
-if ($base === '') $base = '/devhire';
+if ($base === '') $base = '';
 define('BASE_URL', rtrim($base, '/'));
 
-$cssPath = __DIR__ . '/../assets/css/style.css';
+$cssPath = __DIR__ . '/assets/css/style.css';
 $cssVer = file_exists($cssPath) ? filemtime($cssPath) : time();
 ?>
 <!DOCTYPE html>
@@ -29,20 +29,20 @@ $cssVer = file_exists($cssPath) ? filemtime($cssPath) : time();
 <div class="page-main">
 <header class="site-header">
   <div class="header-inner">
-    <div class="logo"><a href="<?= BASE_URL ?>/public/index.php">devHire</a></div>
+    <div class="logo"><a href="<?= BASE_URL ?>/index.php">devHire</a></div>
     <nav class="nav-links">
-      <a href="<?= BASE_URL ?>/public/index.php">Home</a>
-      <a href="<?= BASE_URL ?>/public/jobs.php">Jobs</a>
+      <a href="<?= BASE_URL ?>/index.php">Home</a>
+      <a href="<?= BASE_URL ?>/jobs.php">Jobs</a>
     </nav>
     <div class="auth-buttons">
       <?php if ($isLoggedIn): 
         $dash = $userType === 'company' ? 'company' : ($userType === 'admin' ? 'admin' : 'dashboard');
       ?>
-        <a href="<?= BASE_URL ?>/public/<?= $dash ?>/index.php" class="btn btn-outline btn-sm">Dashboard</a>
-        <a href="<?= BASE_URL ?>/public/logout.php" class="btn btn-primary btn-sm">Logout</a>
+        <a href="<?= BASE_URL ?><?= $dash ?>/index.php" class="btn btn-outline btn-sm">Dashboard</a>
+        <a href="<?= BASE_URL ?>/logout.php" class="btn btn-primary btn-sm">Logout</a>
       <?php else: ?>
-        <a href="<?= BASE_URL ?>/public/login.php" class="btn btn-outline btn-sm">Login</a>
-        <a href="<?= BASE_URL ?>/public/register.php" class="btn btn-primary btn-sm">Register</a>
+        <a href="<?= BASE_URL ?>/login.php" class="btn btn-outline btn-sm">Login</a>
+        <a href="<?= BASE_URL ?>/register.php" class="btn btn-primary btn-sm">Register</a>
       <?php endif; ?>
     </div>
   </div>

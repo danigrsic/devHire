@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (email.length < 5) return;
         emailTimer = setTimeout(async () => {
           try {
-            const res = await fetch('/devhire/public/api/check_email.php?email=' + encodeURIComponent(email));
+            const res = await fetch('/api/check_email.php?email=' + encodeURIComponent(email));
             const data = await res.json();
             const hint = document.getElementById('emailHint');
             if (hint) {
