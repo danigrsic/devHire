@@ -249,4 +249,8 @@ VALUES
   'Debrecen / Hybrid',
   DATE_ADD(CURDATE(), INTERVAL 30 DAY),
   1,1
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> ccfb08f8fe3e2e74535315d13effd38bcb88947b
